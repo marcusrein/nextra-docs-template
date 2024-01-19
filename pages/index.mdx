@@ -1,36 +1,31 @@
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
+	Card,
+	CardContent,
+	CardDescription,
+	CardFooter,
+	CardHeader,
+	CardTitle,
 } from "@/components/ui/card";
 
-<div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-  <Card>
-    <CardHeader>
-      <CardTitle>Card Title 1</CardTitle>
-      <CardDescription>Card Description 1</CardDescription>
-    </CardHeader>
-    <CardContent>
-      <p>Card Content 1</p>
-    </CardContent>
-    <CardFooter>
-      <p>Card Footer 1</p>
-    </CardFooter>
-  </Card>
-  <Card>
-    <CardHeader>
-      <CardTitle>Card Title 2</CardTitle>
-      <CardDescription>Card Description 2</CardDescription>
-    </CardHeader>
-    <CardContent>
-      <p>Card Content 2</p>
-    </CardContent>
-    <CardFooter>
-      <p>Card Footer 2</p>
-    </CardFooter>
-  </Card>
-  {/* Add more <Card> components as needed */}
-</div>
+import { Payment, columns } from "./table/columns";
+import { DataTable } from "./table/data-table";
+
+export default function DemoPage() {
+	const data = [
+    {
+      id: "728ed52f",
+      amount: 100,
+      status: "pending",
+      email: "m@example.com",
+    },
+    // ...
+  ];
+
+    return (
+    	<div className="container mx-auto py-10">
+    		<DataTable columns={columns} data={data} />
+
+    	</div>
+    );
+
+}
